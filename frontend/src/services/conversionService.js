@@ -17,6 +17,7 @@ export async function uploadConversionAssets({ originalFile, processedBlob, sett
   return {
     conversionId: data.conversionId,
     shareToken: data.shareToken,
+    downloadUrl: data.downloadUrl,
     expiresAt: data.expiresAt,
   }
 }

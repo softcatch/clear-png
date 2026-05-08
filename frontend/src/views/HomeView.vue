@@ -44,7 +44,7 @@ async function downloadAndShareConversion() {
       settings: { ...processor.settings },
     })
 
-    shareUrl.value = `${window.location.origin}/share/${saved.shareToken}`
+    shareUrl.value = saved.downloadUrl || `${window.location.origin}/share/${saved.shareToken}`
     shareExpiresAt.value = saved.expiresAt
     shareQrUrl.value = await QRCode.toDataURL(shareUrl.value, {
       errorCorrectionLevel: 'M',

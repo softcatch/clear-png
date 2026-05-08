@@ -84,10 +84,13 @@ Deno.serve(async (request) => {
 
     if (insert.error) throw insert.error
 
+    const downloadUrl = `${supabaseUrl}/functions/v1/download-shared-conversion?token=${shareToken}`
+
     return Response.json(
       {
         conversionId,
         shareToken,
+        downloadUrl,
         expiresAt,
       },
       { headers: corsHeaders },
