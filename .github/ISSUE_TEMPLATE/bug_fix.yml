@@ -1,0 +1,44 @@
+name: Fix
+description: 버그, 회귀, 예외 상황을 제보합니다.
+title: "fix: "
+labels: ["fix", "bug", "needs-triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 문제 설명
+      description: 어떤 문제가 발생했는지 명확히 적어 주세요.
+      placeholder: 예) JPG 업로드 후 다운로드 버튼을 누르면 QR 공유 저장은 되지만 로컬 다운로드가 시작되지 않습니다.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대 동작
+      placeholder: 예) PNG 변환 후 로컬 다운로드와 Supabase 공유 저장이 모두 정상 동작해야 합니다.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 방법
+      value: |
+        1.
+        2.
+        3.
+  - type: textarea
+    id: reason
+    attributes:
+      label: 수정이 필요한 이유
+      description: 사용자 영향, 데이터 영향, 운영 위험을 적어 주세요.
+      placeholder: 예) 핵심 다운로드 플로우가 실패하면 변환 결과를 저장할 수 없습니다.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 완료 조건
+      value: |
+        - [ ] 재현 절차에서 문제가 다시 발생하지 않는다.
+        - [ ] 관련 예외 또는 실패 상태가 사용자에게 적절히 표시된다.
+        - [ ] 기존 정상 플로우가 유지된다.
