@@ -1,0 +1,35 @@
+name: Refactor
+description: 동작 변경 없이 구조 개선, 중복 제거, 유지보수성을 개선합니다.
+title: "refactor: "
+labels: ["refactor", "needs-triage"]
+body:
+  - type: textarea
+    id: target
+    attributes:
+      label: 개선 대상
+      description: 리팩터링하려는 파일, 모듈, 흐름을 적어 주세요.
+      placeholder: 예) frontend/src/composables/useImageProcessor.js의 변환/업로드 책임 분리
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: 필요한 이유
+      description: 복잡도, 중복, 테스트 어려움, 확장성 문제를 적어 주세요.
+      placeholder: 예) 이미지 처리와 공유 저장 로직이 한 흐름에 묶여 있어 실패 원인 분리가 어렵습니다.
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: 제안 방향
+      value: |
+        - [ ] 책임 단위를 나눈다.
+        - [ ] 기존 공개 API 또는 사용자 동작은 유지한다.
+        - [ ] 변경 전후 빌드 결과를 확인한다.
+  - type: textarea
+    id: risk
+    attributes:
+      label: 위험 요소
+      description: 리팩터링 중 깨질 수 있는 동작과 확인 방법을 적어 주세요.
+      placeholder: 예) PNG 다운로드, QR 공유 저장, 공유 페이지 조회 흐름을 모두 확인해야 합니다.
